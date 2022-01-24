@@ -14,4 +14,8 @@ describe Oystercard do
   
   it {expect(oystercard).to respond_to(:top_up)}
 
+  it "checks that top_up will add a given amount to the balance" do
+    oystercard.top_up(50)
+    expect(oystercard.balance).to eq(50)
+  end
 end
