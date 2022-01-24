@@ -12,16 +12,8 @@ class Oystercard
     limit_exceeded = "Max limit is £90."
     
     fail "test" unless @balance + amount <= MAX_BALANCE
-
-    # THIS WAS THE CULPRINT VVV IT SHOULD HAVE GONE LAST AFTER THE FAIL. 
-    # BECAUSE THE BALANCE SHOULDNT BE ADDED TO THE AMOUNT UNLESS THE TOTAL WILL BE LESS THAN 90!!! ARGH
     @balance += amount
 
 
   end
 end
-
-# test = Oystercard.new
-
-# p test.top_up(100)
-
