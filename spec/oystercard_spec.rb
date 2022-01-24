@@ -4,7 +4,12 @@ describe Oystercard do
 
   let(:oystercard) { Oystercard.new }
   
-  it "checks for an existing balance" do
-    expect(oystercard).to respond_to(:balance)
+
+  it {expect(oystercard).to respond_to(:balance)}
+
+
+  it "checks that the default balance is 0" do
+    expect(oystercard.balance).to eq(0)
   end
+  
 end
