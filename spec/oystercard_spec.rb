@@ -2,11 +2,9 @@ require 'oystercard'
 
 describe Oystercard do
 
-  let(:oystercard) { Oystercard.new }
+  let(:oystercard) {Oystercard.new}
   
-
   it {expect(oystercard).to respond_to(:balance)}
-
 
   it "checks that the default balance is 0" do
     expect(oystercard.balance).to eq(0)
@@ -20,10 +18,23 @@ describe Oystercard do
   end
 
   it "checks that top_up will sum given amounts to the balance" do
-    oystercard.top_up(50)
-    oystercard.top_up(20)
-    oystercard.top_up(30)
-    expect(oystercard.balance).to eq(100)
+    oystercard.top_up(10)
+    oystercard.top_up(10)
+    expect(oystercard.balance).to eq(20)
   end
 
+  # it {expect(oystercard).to respond_to(:top_up)}
+
+  # it "should raise" do
+  #   expect{Object.public_instance_methods}.to raise_error(NameError)
+  # end
+
+  # it {expect(oystercard.top_up(100)).to raise_error}
+  # it "prevents the user from topping up beyond the limit of £90" do
+  it "fails if the top_up increases balance beyond the limit" do
+    expect {oystercard.top_up(1999)}.to raise_error 'test'
+  end
+    
+
+  
 end
