@@ -12,4 +12,6 @@ describe Oystercard do
     expect(oystercard.balance).to eq(0)
   end
   
+  it {expect(oystercard).to respond_to(:top_up)}
+
 end
