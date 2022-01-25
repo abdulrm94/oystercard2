@@ -6,7 +6,7 @@ class Oystercard
   MAX_BALANCE = 90
   def initialize
     @balance = 0
-    @oystercard_status = "not in use"
+    @in_journey = false
   end
 
   def top_up(amount)
@@ -19,18 +19,14 @@ class Oystercard
   end
 
   def in_journey?
-    if @oystercard_status == "not in use"
-      return false
-    elsif @oystercard_status == "in use"
-      return true
-    end
+    @in_journey
   end
 
   def touch_in
-    @oystercard_status = "in use"
+    @in_journey = true
   end  
 
   def touch_out
-    @oystercard_status = "not in use"
+    @in_journey = false
   end  
 end
