@@ -1,21 +1,36 @@
 # oystercard
 Makers Week 4: Oyster card pairing challenge
 
-Date: 24/01/2022
-Pairing: Dan Watts and Abdul Mobarak
+----------
 
-User stories:
+Date: 24/01/2022
+
+Challenges complete 1 - 6
+
+Paired with Dan Watts and Abdul Mobarak
+
+----------
+
+User stories completed:
+```
   In order to use public transport
   As a customer
   I want money on my card
+```
 
+```
   In order to keep using public transport
   As a customer
   I want to add money to my card
+```
 
+```
   In order to protect my money
   As a customer
   I don't want to put too much money on my card
+```
+----------
+User stories to do:
 
   In order to pay for my journey
   As a customer
