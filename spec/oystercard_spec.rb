@@ -5,12 +5,11 @@ describe Oystercard do
   let(:oystercard) {Oystercard.new}
   let(:maxbalance) {Oystercard::MAX_BALANCE}
   
-  #check method balance exists
+  # check method balance exists
   it {expect(oystercard).to respond_to(:balance)}
 
-  it "checks that the default balance is 0" do
-    expect(oystercard.balance).to eq(0)
-  end
+  # expect starting balance to equal 0
+  it {expect(oystercard.balance).to eq(0)}
 
   #check method top_up exists
   it {expect(oystercard).to respond_to(:top_up)}
@@ -32,5 +31,10 @@ describe Oystercard do
 
   #check method deduct exists
   it {expect(oystercard).to respond_to(:deduct)}
+
+  it "checks that deduct will deduct a given amount to the balance" do
+    oystercard.deduct(5)
+    expect(oystercard.balance).to eq(-5)
+  end
 
 end
