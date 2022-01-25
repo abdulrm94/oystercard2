@@ -21,9 +21,13 @@ class Oystercard
   def in_journey?
     if @oystercard_status == "not in use"
       return false
-    else
+    elsif @oystercard_status == "in use"
       return true
     end
   end
+
+  def touch_in
+    @oystercard_status = "in use"
+  end  
 
 end

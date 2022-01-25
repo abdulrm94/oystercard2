@@ -43,10 +43,19 @@ describe Oystercard do
     expect(oystercard.balance).to eq(-10)
   end
 
+  # check that in_journey method exists
   it {expect(oystercard).to respond_to(:in_journey?)}
 
   it "check the default oystercard_status? method returns false. i.e oystercard is not in use" do
-    expect(oystercard.in_journey?).to eq(false)
+    expect(oystercard.in_journey?).to eq false
   end
+
+  it {expect(oystercard).to respond_to(:touch_in)}
+
+  it "check if when touch_in is called, in_journey returns true" do
+    oystercard.touch_in
+    expect(oystercard.in_journey?).to eq true
+  end
+  
 
 end
