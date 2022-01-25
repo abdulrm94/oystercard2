@@ -45,4 +45,8 @@ describe Oystercard do
 
   it {expect(oystercard).to respond_to(:in_journey?)}
 
+  it "check the default oystercard_status? method returns false. i.e oystercard is not in use" do
+    expect(oystercard.in_journey?).to eq(false)
+  end
+
 end
