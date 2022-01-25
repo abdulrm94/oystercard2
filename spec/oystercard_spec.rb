@@ -43,4 +43,6 @@ describe Oystercard do
     expect(oystercard.balance).to eq(-10)
   end
 
+  it {expect(oystercard).to respond_to(:in_journey?)}
+
 end
