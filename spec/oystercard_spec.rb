@@ -3,6 +3,7 @@ require 'oystercard'
 describe Oystercard do
 
   let(:oystercard) {Oystercard.new}
+  let(:maxbalance) {Oystercard::MAX_BALANCE}
   
   it {expect(oystercard).to respond_to(:balance)}
 
@@ -25,7 +26,7 @@ describe Oystercard do
 
   it {expect(oystercard).to respond_to(:top_up)}
 
-  it "fails if the top_up increases balance beyond the limit" do
-    expect {oystercard.top_up(1999)}.to raise_error 'test'
+  it "raise error if max balance exceeded" do
+    expect {oystercard.top_up(1999)}.to raise_error "Max balance of £#{maxbalance} exceeded."
   end
 end
