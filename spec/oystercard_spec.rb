@@ -57,5 +57,12 @@ describe Oystercard do
     expect(oystercard.in_journey?).to eq true
   end
   
+  it {expect(oystercard).to respond_to(:touch_out)}
 
+  it "check if when touch_in and then touch_out is called, in_journey returns false" do
+    oystercard.touch_in
+    oystercard.touch_out
+    expect(oystercard.in_journey?).to eq false
+  end
+  
 end

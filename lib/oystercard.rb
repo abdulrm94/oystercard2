@@ -30,4 +30,7 @@ class Oystercard
     @oystercard_status = "in use"
   end  
 
+  def touch_out
+    @oystercard_status = "not in use"
+  end  
 end
