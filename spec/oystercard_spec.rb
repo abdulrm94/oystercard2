@@ -37,4 +37,10 @@ describe Oystercard do
     expect(oystercard.balance).to eq(-5)
   end
 
+  it "checks that deduct will deduct multiple given amounts to the balance" do
+    oystercard.deduct(5)
+    oystercard.deduct(5)
+    expect(oystercard.balance).to eq(-10)
+  end
+
 end
