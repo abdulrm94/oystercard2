@@ -3,47 +3,48 @@ Makers Week 4: Oyster card pairing challenge
 
 ----------
 
-Date: 24/01/2022
-
-Challenges complete 1 - 6
-
-Paired with Dan Watts and Abdul Mobarak
-
+| Date                | Challenges completed   | Paired or Solo?       |  
+|---------------------|----------------------  |-----------------------|
+| 24/01/2022 - Monday |<center>1 to 6</center> | Paired with Dan Watts | 
+| 25/01/2022 - Tuesday|<center>7 to 9</center>| Solo                  |  
+|                     |                        |                       |
 ----------
 
-User stories completed:
+### User stories completed
 ```
   In order to use public transport
   As a customer
   I want money on my card
 ```
-
 ```
   In order to keep using public transport
   As a customer
   I want to add money to my card
 ```
-
 ```
   In order to protect my money
   As a customer
   I don't want to put too much money on my card
 ```
-----------
-User stories to do:
-
+```
   In order to pay for my journey
   As a customer
   I need my fare deducted from my card
-
+```
+```
   In order to get through the barriers
   As a customer
   I need to touch in and out
-
+```
+```
   In order to pay for my journey
   As a customer
   I need to have the minimum amount for a single journey
+```
+----------
+### User stories to do:
 
+  
   In order to pay for my journey
   As a customer
   I need to pay for my journey when it's complete
