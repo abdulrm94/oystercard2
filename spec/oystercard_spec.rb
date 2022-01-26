@@ -4,6 +4,7 @@ describe Oystercard do
 
   let(:oystercard) {Oystercard.new}
   let(:maxbalance) {Oystercard::MAX_BALANCE}
+  let(:minamount) {Oystercard::MIN_AMOUNT}
   
   # check method balance exists
   it {expect(oystercard).to respond_to(:balance)}
@@ -53,6 +54,7 @@ describe Oystercard do
   it {expect(oystercard).to respond_to(:touch_in)}
 
   it "check if when touch_in is called, in_journey returns true" do
+    oystercard.top_up(minamount)
     oystercard.touch_in
     expect(oystercard.in_journey?).to eq true
   end
@@ -60,9 +62,14 @@ describe Oystercard do
   it {expect(oystercard).to respond_to(:touch_out)}
 
   it "check if when touch_in and then touch_out is called, in_journey returns false" do
+    oystercard.top_up(minamount)
     oystercard.touch_in
     oystercard.touch_out
     expect(oystercard.in_journey?).to eq false
   end
   
+  it "raise error if balance is under 1 on touch in" do
+    expect {oystercard.touch_in}.to raise_error "Your balance is less than £#{minamount}."
+  end
+
 end
