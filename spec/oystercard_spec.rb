@@ -30,20 +30,6 @@ describe Oystercard do
     expect {oystercard.top_up(1999)}.to raise_error "Max balance of £#{maxbalance} exceeded."
   end
 
-  #check method deduct exists
-  it {expect(oystercard).to respond_to(:deduct)}
-
-  it "checks that deduct will deduct a given amount to the balance" do
-    oystercard.deduct(5)
-    expect(oystercard.balance).to eq(-5)
-  end
-
-  it "checks that deduct will deduct multiple given amounts to the balance" do
-    oystercard.deduct(5)
-    oystercard.deduct(5)
-    expect(oystercard.balance).to eq(-10)
-  end
-
   # check that in_journey method exists
   it {expect(oystercard).to respond_to(:in_journey?)}
 
@@ -70,6 +56,10 @@ describe Oystercard do
   
   it "raise error if balance is under 1 on touch in" do
     expect {oystercard.touch_in}.to raise_error "Your balance is less than £#{minamount}."
+  end
+
+  it "checks that on touch_out the balance is reduced by the min fare" do
+    expect{oystercard.touch_out}.to change{oystercard.balance}.by(- minamount)
   end
 
 end

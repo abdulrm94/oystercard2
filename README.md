@@ -41,14 +41,13 @@ Makers Week 4: Oyster card pairing challenge
   As a customer
   I need to have the minimum amount for a single journey
 ```
-----------
-### User stories to do:
-
-  
+```
   In order to pay for my journey
   As a customer
   I need to pay for my journey when it's complete
-
+```
+----------
+### User stories to do:
   In order to pay for my journey
   As a customer
   I need to know where I've travelled from
