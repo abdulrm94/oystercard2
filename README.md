@@ -3,11 +3,11 @@ Makers Week 4: Oyster card pairing challenge
 
 ----------
 
-| Date                | Challenges completed   | Paired or Solo?       |  
-|---------------------|----------------------  |-----------------------|
-| 24/01/2022 - Monday |<center>1 to 6</center> | Paired with Dan Watts | 
-| 25/01/2022 - Tuesday|<center>7 to 10</center>| Solo                  |  
-|                     |                        |                       |
+| Date                 | Challenges completed   | Paired or Solo?       |  
+|--------------------- |----------------------  |-----------------------|
+| 24/01/2022 - Monday  |<center>1 to 6</center> | Paired with Dan Watts | 
+| 25/01/2022 - Tuesday |<center>7 to 10</center>| Solo                  |  
+|26/01/2022 - Wednesday|<center>11 to #</center>| Solo                  |                       
 ----------
 
 ### User stories completed

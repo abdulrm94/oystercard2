@@ -41,7 +41,7 @@ describe Oystercard do
 
   it "check if when touch_in is called, in_journey returns true" do
     oystercard.top_up(minamount)
-    oystercard.touch_in
+    oystercard.touch_in("test")
     expect(oystercard.in_journey?).to eq true
   end
   
@@ -49,17 +49,25 @@ describe Oystercard do
 
   it "check if when touch_in and then touch_out is called, in_journey returns false" do
     oystercard.top_up(minamount)
-    oystercard.touch_in
+    oystercard.touch_in("test")
     oystercard.touch_out
     expect(oystercard.in_journey?).to eq false
   end
   
   it "raise error if balance is under 1 on touch in" do
-    expect {oystercard.touch_in}.to raise_error "Your balance is less than £#{minamount}."
+    expect {oystercard.touch_in("test")}.to raise_error "Your balance is less than £#{minamount}."
   end
 
   it "checks that on touch_out the balance is reduced by the min fare" do
     expect{oystercard.touch_out}.to change{oystercard.balance}.by(- minamount)
   end
+
+  it "checks that touch_in is equal to station passed on method" do
+    oystercard.top_up(minamount)
+    expect(oystercard.touch_in("test")).to eq("test")
+  end
+
+
+  
 
 end
